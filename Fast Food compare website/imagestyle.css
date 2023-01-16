@@ -1,0 +1,13 @@
+.logo {
+    max-width: 200px;
+    margin-top: 10px;
+    max-height: 120px;
+}
+
+.stars {
+    width: 100px;
+}
+
+.star {
+    width: 15px;
+}

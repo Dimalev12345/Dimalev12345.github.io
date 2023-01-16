@@ -101,20 +101,75 @@ body {
     }
 }
 
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    font-size: 18px;
+    background-color: #333;
+    color: white;
+    text-align: left;
+  }
 
-.card {
-    background-color: dodgerblue;
+/*.card {
+    background-color: #333;
     color: white;
     padding: 1rem;
     height: 4rem;
 }
+*/
 
 .cards {
-    max-width: 1600px;
-    margin: 0 auto;
+    max-width: 1200px;
+    margin: 100px auto;
     display: grid;
     gap: 1rem;
 }
+
+.card {
+    --b: 3px;   /* border thickness */
+    --s: .45em; /* size of the corner */
+    --color: #373B44;
+
+    padding: calc(.5em + var(--s)) calc(.9em + var(--s));
+    color: var(--color);
+    --_p: var(--s);
+    background:
+      conic-gradient(from 90deg at var(--b) var(--b),#0000 90deg,var(--color) 0)
+      var(--_p) var(--_p)/calc(100% - var(--b) - 2*var(--_p)) calc(100% - var(--b) - 2*var(--_p));
+    transition: .3s linear, color 0s, background-color 0s;
+    outline: var(--b) solid #0000;
+    outline-offset: .6em;
+    font-size: 16px;
+  
+    border: 0;
+  
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+
+  }
+
+  .inCard {
+    display: flex;
+    flex-direction:column;
+    text-decoration: underline;
+  }
+
+  
+  .card:hover,
+  .card:focus-visible{
+    --_p: 0px;
+    outline-color: var(--color);
+    outline-offset: .05em;
+  }
+  
+  .card:active {
+    background: var(--color);
+    color: #fff;
+  }
 
 @media (min-width: 600px) {
     .cards { grid-template-columns: repeat(2, 1fr); }
@@ -124,3 +179,70 @@ body {
     .cards { grid-template-columns: repeat(3, 1fr); }
 }
 
+.page-title {
+    text-align: center;
+    width: 100%;
+    padding: 0px 200px 0px;
+}
+
+.page_text {
+    font-size: 20px;
+    text-align: center;
+    padding-top: 50px;
+}
+
+.page_text2 {
+    font-size: 15px;
+    text-align: center;
+    padding-top: 50px;
+    margin: auto;
+}
+
+.buttons {
+  margin: 20px auto ;
+  height: 300px;
+  width: 200px;
+  display: flex;
+  flex-direction:column;
+}
+
+/* Copied from getcssscan.com, 92 interactive button examples. */
+.button-89 {
+  --b: 3px;   /* border thickness */
+  --s: .45em; /* size of the corner */
+  --color: #373B44;
+  
+  padding: calc(.5em + var(--s)) calc(.9em + var(--s));
+  color: var(--color);
+  --_p: var(--s);
+  background:
+    conic-gradient(from 90deg at var(--b) var(--b),#0000 90deg,var(--color) 0)
+    var(--_p) var(--_p)/calc(100% - var(--b) - 2*var(--_p)) calc(100% - var(--b) - 2*var(--_p));
+  transition: .3s linear, color 0s, background-color 0s;
+  outline: var(--b) solid #0000;
+  outline-offset: .6em;
+  font-size: 16px;
+
+  border: 0;
+
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+
+  flex: 1 1 0px;
+  border: 1px solid black;
+  margin-top: 5px;
+
+}
+
+.button-89:hover,
+.button-89:focus-visible{
+  --_p: 0px;
+  outline-color: var(--color);
+  outline-offset: .05em;
+}
+
+.button-89:active {
+  background: var(--color);
+  color: #fff;
+}
